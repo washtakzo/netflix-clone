@@ -1,6 +1,6 @@
 .row {
   color: white;
-  padding: 15px;
+  margin-left: 20px;
 }
 
 .row__images {
@@ -14,20 +14,23 @@
   display: none;
 }
 .row__image {
-  height: 300px;
-  object-fit: cover;
-  margin-left: 10px;
+  max-height: 150px;
+  object-fit: contain;
   margin-right: 10px;
   transition: all 0.2s ease-out;
+  cursor: pointer;
 }
 
-.row__image__landscape {
-  height: 150px;
+.row__image__large {
+  max-height: 300px;
 }
 
 .row__image:hover {
-  cursor: pointer;
-  transform: scale(1.06);
+  transform: scale(1.08);
+}
+
+.row__image__large:hover {
+  transform: scale(1.09);
 }
 
 .row__title {
