@@ -1,0 +1,35 @@
+.row {
+  color: white;
+  padding: 15px;
+}
+
+.row__images {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding: 20px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.row__image {
+  height: 300px;
+  object-fit: cover;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all 0.2s ease-out;
+}
+
+.row__image__landscape {
+  height: 150px;
+}
+
+.row__image:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.row__title {
+  font-size: 1.3rem;
+}
