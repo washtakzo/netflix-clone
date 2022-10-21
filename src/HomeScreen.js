@@ -16,33 +16,20 @@ const HomeScreen = () => {
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow={false}
-      />
-      <Row
-        title="Trending Now"
-        fetchUrl={requests.fetchTrending}
         isLargeRow={true}
       />
-      <Row
-        title="Top Rated"
-        fetchUrl={requests.fetchTopRated}
-        isLargeRow={true}
-      />
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow={false}
       />
       <Row
         title="Trending Now"
         fetchUrl={requests.fetchTrending}
         isLargeRow={true}
       />
-      <Row
-        title="Top Rated"
-        fetchUrl={requests.fetchTopRated}
-        isLargeRow={true}
-      />
+      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
     </div>
   );
 };
