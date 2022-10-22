@@ -11,10 +11,6 @@ const router = createBrowserRouter([
     path: "/",
     element: user != null ? <HomeScreen /> : <LoginScreen />,
   },
-  {
-    path: "login",
-    element: <LoginScreen />,
-  },
 ]);
 
 // ReactDOM.createRoot(document.getElementById("root")).render(
