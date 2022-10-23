@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "./features/userSlice";
 import "./Nav.css";
 
 const Nav = () => {
+  const dispatch = useDispatch();
+  //---
   const [show, setShow] = useState(false);
   const transitionNabBar = () => {
     if (window.scrollY > 100) {
@@ -24,7 +28,7 @@ const Nav = () => {
         <img
           className="nav__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/langfr-560px-Netflix_2015_logo.svg.png"
-          alt="banner"
+          alt="netflix logo"
         />
         <img
           className="nav__avatar"

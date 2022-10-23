@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { login, selectUser } from "../features/userSlice";
+import { useDispatch } from "react-redux";
+import { login } from "../features/userSlice";
 import { createUser, signinUser } from "../firebase";
 import "./Signin.css";
 
 const Signin = () => {
   const dispatch = useDispatch();
-  const user = useSelector(selectUser);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const handleSignin = (e) => {

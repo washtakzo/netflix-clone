@@ -22,7 +22,7 @@ function App() {
       if (userAuth) {
         dispatch(login({ email: userAuth.email, uid: userAuth.uid }));
       } else {
-        dispatch(logout);
+        dispatch(logout());
       }
     });
     return unsubscribe;
