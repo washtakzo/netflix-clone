@@ -30,7 +30,7 @@
   font-weight: 600;
   color: white;
   border: none;
-  background-color: red;
+  background-color: #e50914;
   cursor: pointer;
 }
 
@@ -47,7 +47,7 @@
   );
 }
 
-.loginScreen_body {
+.loginScreen__body {
   position: absolute;
   top: 30%;
   left: 0;
@@ -55,16 +55,16 @@
   padding: 0 50px;
   text-align: center;
 }
-.loginScreen_body h1 {
+.loginScreen__body h1 {
   font-size: 2.6rem;
   font-weight: 600;
 }
-.loginScreen_body h2 {
+.loginScreen__body h2 {
   font-size: 1.4rem;
   font-weight: 400;
   padding: 10px 0;
 }
-.loginScreen_body h3 {
+.loginScreen__body h3 {
   font-size: 1rem;
   font-weight: 400;
   padding: 10px 0;
@@ -82,9 +82,10 @@
 }
 .loginScreen__form button {
   border: none;
-  background-color: red;
+  background-color: #e50914;
   color: white;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 18px 20px;
+  cursor: pointer;
 }
