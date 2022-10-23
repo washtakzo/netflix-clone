@@ -23,4 +23,4 @@ const signinUser = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
 
-export { createUser, signinUser };
+export { createUser, signinUser, auth };

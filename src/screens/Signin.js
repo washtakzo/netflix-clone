@@ -23,7 +23,9 @@ const Signin = () => {
     e.preventDefault();
     signinUser(emailRef.current.value, passwordRef.current.value)
       .then((res) => {
-        console.log(res);
+        console.log({ res });
+        dispatch(login({ email: res.user.email, uid: res.user.uid }));
+        console.log(res.user.email);
       })
       .catch((error) => {
         alert(error.message);
@@ -41,7 +43,6 @@ const Signin = () => {
         <h4>
           <span>New to Netflix? </span>
           <span className="loginScreen__signup_now" onClick={handleSignup}>
-            {" "}
             Sign Up now.
           </span>
         </h4>
