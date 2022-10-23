@@ -1,0 +1,53 @@
+import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, selectUser } from "../features/userSlice";
+import { createUser, signinUser } from "../firebase";
+import "./Signin.css";
+
+const Signin = () => {
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const handleSignin = (e) => {
+    e.preventDefault();
+    createUser(emailRef.current.value, passwordRef.current.value)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+  const handleSignup = (e) => {
+    e.preventDefault();
+    signinUser(emailRef.current.value, passwordRef.current.value)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
+  return (
+    <div className="loginScreen__signin">
+      <form>
+        <h1>Sign In</h1>
+        <input type="email" placeholder="Email" ref={emailRef} />
+        <input type="password" placeholder="Password" ref={passwordRef} />
+        <button type="submit" onClick={handleSignin}>
+          Sign In
+        </button>
+        <h4>
+          <span>New to Netflix? </span>
+          <span className="loginScreen__signup_now" onClick={handleSignup}>
+            {" "}
+            Sign Up now.
+          </span>
+        </h4>
+      </form>
+    </div>
+  );
+};
+
+export default Signin;
