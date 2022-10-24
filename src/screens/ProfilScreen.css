@@ -1,0 +1,55 @@
+.profilScreen {
+  color: white;
+  min-height: 100vh;
+}
+
+.profilScreen__body {
+  /* background-color: rgba(255, 0, 0, 0.228); */
+  width: 60%;
+  max-width: 800px;
+  margin: auto;
+  padding-top: 200px;
+}
+
+.profilScreen__body > h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.profilScreen__body__detail {
+  /* background-color: rgba(115, 128, 0, 0.285); */
+  margin-top: 15px;
+  display: flex;
+}
+
+.profilScreen__body__detail > img {
+  height: 100px;
+}
+
+.profilScreen__body__info {
+  /* background-color: rgba(0, 0, 255, 0.315); */
+  flex-grow: 1;
+  margin-left: 20px;
+}
+.profilScreen__body__info > h2 {
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: gray;
+  font-weight: 500;
+  border-radius: 2px;
+}
+.profilScreen__body__info > h3 {
+  margin-top: 10px;
+  font-size: 1.4rem;
+}
+.profilScreen__signout {
+  width: 100%;
+  height: 30px;
+  background-color: red;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  margin-top: 10px;
+}
