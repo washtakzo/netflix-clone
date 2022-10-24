@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { logout } from "./features/userSlice";
 import "./Nav.css";
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
-  const dispatch = useDispatch();
-  //---
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const transitionNabBar = () => {
     if (window.scrollY > 100) {
@@ -29,11 +27,17 @@ const Nav = () => {
           className="nav__logo"
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/langfr-560px-Netflix_2015_logo.svg.png"
           alt="netflix logo"
+          onClick={() => {
+            navigate("/");
+          }}
         />
         <img
           className="nav__avatar"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt="avatar"
+          onClick={() => {
+            navigate("/profil");
+          }}
         />
       </div>
     </div>

@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectUser, login, logout } from "./features/userSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import ProfilScreen from "./screens/ProfilScreen";
 
 function App() {
   const user = useSelector(selectUser);
@@ -15,6 +16,10 @@ function App() {
     {
       path: "/",
       element: user != null ? <HomeScreen /> : <LoginScreen />,
+    },
+    {
+      path: "/profil",
+      element: user != null ? <ProfilScreen /> : <LoginScreen />,
     },
   ]);
   useEffect(() => {
