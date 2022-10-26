@@ -41,11 +41,24 @@
 .profilScreen__body__info > h3 {
   margin-top: 10px;
   font-size: 1.4rem;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.51);
 }
+.profilScreen__body__info > h4 {
+  font-size: large;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.profilScreen__plans {
+  margin: 20px 0;
+}
+
 .profilScreen__signout {
   width: 100%;
-  height: 30px;
-  background-color: red;
+  height: 40px;
+  background-color: #e50914;
   border: none;
   color: white;
   cursor: pointer;
