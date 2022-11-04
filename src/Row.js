@@ -4,7 +4,7 @@ import "./Row.css";
 
 const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/original";
 
-const Row = ({ title, fetchUrl, isLargeRow = false }) => {
+const Row = ({ title, fetchUrl, isLargeRow = false, handleMovieClick }) => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
                 isLargeRow ? movie.poster_path : movie.backdrop_path
               }`}
               alt={movie.name}
+              onClick={handleMovieClick && (() => handleMovieClick(movie))}
             />
           );
         })}
