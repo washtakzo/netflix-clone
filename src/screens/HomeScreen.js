@@ -9,6 +9,8 @@ const HomeScreen = () => {
   const [bannerMovieInfo, setBannerMovieInfo] = React.useState();
   const getMovie = (movieInfo) => {
     setBannerMovieInfo(movieInfo);
+    //TODO:Scroll on top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
     <div className="homeScreen">
@@ -29,14 +31,14 @@ const HomeScreen = () => {
         handleMovieClick={getMovie}
       />
       <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.fetchNetflixOriginals}
+        title="NOW PLAYING"
+        fetchUrl={requests.fetchNowPlaying}
         isLargeRow={true}
         handleMovieClick={getMovie}
       />
       <Row
-        title="TOP RATED"
-        fetchUrl={requests.fetchTopRated}
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
         handleMovieClick={getMovie}
       />

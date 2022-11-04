@@ -13,13 +13,35 @@ const Banner = ({ movieInfo }) => {
   const [movie, setMovie] = useState(movieInfo);
 
   const handlePlay = async () => {
+    let teaserLink;
+    const randomTypeFallback = Math.random() > 0.5 ? "movie" : "tv";
     try {
       console.log({ movie });
-      const teaserLink = await getTeaserLink(movie.id, movie.media_type);
-      console.log(teaserLink);
+      teaserLink = await getTeaserLink(
+        movie.id,
+        movie.media_type || randomTypeFallback,
+        "fr-fr"
+      );
+      console.log({ teaserLink });
       window.open(teaserLink, "_blank").focus();
     } catch (error) {
-      alert(error.message);
+      console.warn(
+        "Teaser non disponible en français, tentative de récupération en anglais ..."
+      );
+    }
+    if (!teaserLink) {
+      try {
+        console.log({ movie });
+        teaserLink = await getTeaserLink(
+          movie.id,
+          movie.media_type || randomTypeFallback,
+          "en-US"
+        );
+        console.log({ teaserLink });
+        window.open(teaserLink, "_blank").focus();
+      } catch (error) {
+        alert(error.message);
+      }
     }
   };
 
