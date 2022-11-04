@@ -15,7 +15,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: user != null ? <HomeScreen /> : <LoginScreen />,
+      element: user != null ? <HomeScreen /> : <HomeScreen />,
     },
     {
       path: "/profil",

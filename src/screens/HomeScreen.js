@@ -6,29 +6,40 @@ import requests from "../Request";
 import Row from "../Row";
 
 const HomeScreen = () => {
+  const [bannerMovieInfo, setBannerMovieInfo] = React.useState();
+  const getMovie = (movieInfo) => {
+    setBannerMovieInfo(movieInfo);
+  };
   return (
     <div className="homeScreen">
       <Nav />
 
-      <Banner />
+      <Banner movieInfo={bannerMovieInfo} />
 
       <Row
-        title="NETFLIX ORIGINALS"
-        fetchUrl={requests.fetchNetflixOriginals}
+        title="TRENDING MOVIES"
+        fetchUrl={requests.fetchTrendingMovie}
         isLargeRow={true}
+        handleMovieClick={getMovie}
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+      <Row
+        title="TRENDING TV SHOWS"
+        fetchUrl={requests.fetchTrendingTv}
+        isLargeRow={true}
+        handleMovieClick={getMovie}
+      />
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow={true}
+        handleMovieClick={getMovie}
       />
       <Row
-        title="Trending Now"
-        fetchUrl={requests.fetchTrending}
+        title="TOP RATED"
+        fetchUrl={requests.fetchTopRated}
         isLargeRow={true}
+        handleMovieClick={getMovie}
       />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
     </div>
   );
 };
