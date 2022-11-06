@@ -34,9 +34,7 @@ export const getTeaserLink = async (movieId, mediaType, lang = "fr-fr") => {
   if (youtubeTeasers[0]?.key !== undefined) {
     return linkToReturn;
   } else {
-    throw new Error(
-      "Erreur : Aucun trailer n'est disponible pour cette oeuvre"
-    );
+    throw new Error("Erreur : Aucun teaser disponible pour cette oeuvre");
   }
 };
 
