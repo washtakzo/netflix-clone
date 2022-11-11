@@ -40,7 +40,16 @@ const Banner = ({ movieInfo }) => {
         console.log({ teaserLink });
         window.open(teaserLink, "_blank").focus();
       } catch (error) {
-        alert(error.message);
+        // alert(error.message);
+        console.log(movie);
+        window
+          .open(
+            "https://www.youtube.com/results?search_query=" +
+              (movie.name || movie.title) +
+              " trailer",
+            "_blank"
+          )
+          .focus();
       }
     }
   };
